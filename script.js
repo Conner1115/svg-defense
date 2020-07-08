@@ -16,6 +16,6 @@ var TOWERS = [
 ];
 for(var i = 0; i < TOWERS.length; i++){
   for(var j = 0; j < TOWERS[i].length; j++){
-    drawTower(TOWERS[i][j],120*j+100,100*i+100,0);
+    drawTower(TOWERS[i][j],120*j+100,100*i+200,0);
   }
 }
