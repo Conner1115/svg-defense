@@ -16,7 +16,10 @@ Here are some things that will be added into the game:
 
 •Hundreds of different towers
 
+•automatic local storage
+
 •And HOURS of fun
+
 
 
 
