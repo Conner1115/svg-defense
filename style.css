@@ -8,5 +8,6 @@ svg {
   position: absolute;
 }
 audio{
+  position:relative;
  z-index:5; 
 }
