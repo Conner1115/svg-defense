@@ -24,3 +24,6 @@ Here are some things that will be added into the game:
 
 
 This game will be done in approx three months.  It's going to take a while to finish this.
+
+UPDATE LOG:
+
