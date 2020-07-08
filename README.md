@@ -27,3 +27,4 @@ This game will be done in approx three months.  It's going to take a while to fi
 
 UPDATE LOG:
 
+•Finished drawing all of the towers, 47 in total
