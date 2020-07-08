@@ -20,4 +20,4 @@ Here are some things that will be added into the game:
 
 
 
-This game will be done in approx. Three months.  It's going to take a while to finish this.
+This game will be done in approx three months.  It's going to take a while to finish this.
