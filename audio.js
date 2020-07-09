@@ -16,6 +16,7 @@ var sounds = {
   Hit_Pierce:"sounds/Gun_loud-Soundmaster_-88363983.mp3",
   Laser_RapidX5:"sounds/Laser_Machine_Gun-Mike_Koenig-1194129298.mp3",
   Suicide_Bomber:"sounds/Suicide_Bomber_2-Mike_Koenig-1558726178.mp3",
+  Tank_Firing:"sounds/Tank Firing-SoundBible.com-998264747.mp3",
 };
 var playSound = function (sound) {
   var AUDIO = document.createElement("audio");
