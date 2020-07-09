@@ -2,10 +2,7 @@ svg {
   width: 200px;
   height: 200px;
   z-index:2;
-}
-
-.tower {
-  position: absolute;
+  position:absolute;
 }
 audio{
   position:relative;
