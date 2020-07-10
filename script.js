@@ -14,9 +14,20 @@ var TOWERS = [
   //Demolition Tower Classes
   ["Demolition Tower","Bio-Bomb","Flamethrower","Grenade Launcher","Nuke cannon","Boulder Thrower"],
 ];
-
-for(var i = 0; i < TOWERS.length; i++){
-  for(var j = 0; j < TOWERS[i].length; j++){
-    drawTower(TOWERS[i][j],120*j+100,100*i+400,0);
-  }
-}
+var ENEMIES = [
+  //basic enemies
+  ["rifleman","pistolman","barreta-M9 soldier","medic","suicide bomber","spy","rocket soldier"],
+  //cars, tanks, any enemies that carry others
+  ["tank","mammoth tank","MAGNUS tank","ranger","DRACULA tank","APC","gattling tank","Army Transporter"],
+  //naval units
+  ["gunboat","destroyer","cruiser","submarine","aircraft carrier"],
+  //aircraft
+  ["helicopter","Phoenix helicopter","warplane","B39 bomber","V2 rocket","Nuke"],
+  //titans
+  ["titan mech","mini-titan"],
+  //bosses
+  ["Magmoroth"],
+  //technological
+  ["forcefield trooper","flame trooper","plasma trooper","quasicon trooper","dimension opener"],
+  
+];
