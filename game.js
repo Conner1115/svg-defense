@@ -3435,7 +3435,7 @@ draw = function(){
   try{
   if(frameCount % 100 === 0){
     enemies.push(new Enemy(ENEMIES[3][1],random(1200),random(600)));
-    playSound(sounds.Big_Explosion);
+    playSound(sounds.Grenade);
   }
         background(240,240,240);
   noFill();
