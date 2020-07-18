@@ -2,7 +2,7 @@ This game in development will soon be a tower defense made from only DOM, HTML, 
 
 
 
-I am putting my coding skills to the test by making this huge projects.
+I am putting my coding skills to the test by making this huge project.
 
 
 
@@ -28,3 +28,9 @@ This game will be done in approx three months.  It's going to take a while to fi
 UPDATE LOG:
 
 •Finished drawing all of the towers, 47 in total
+
+•Finished the enemy graphics
+
+•Finished tower, enemy, and bullet mechanics
+
+•I was forced to use processing.js and canvas to animate the game
