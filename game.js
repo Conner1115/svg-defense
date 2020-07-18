@@ -3435,7 +3435,7 @@ draw = function(){
   try{
   if(frameCount % 100 === 0){
     enemies.push(new Enemy(ENEMIES[3][1],random(1200),random(600)));
-    playSound(sounds.Grenade);
+    
   }
         background(240,240,240);
   noFill();
@@ -3497,6 +3497,7 @@ draw = function(){
         speed:0,
         targets:[false,false,false],
     }));
+        playSound(sounds.Big_Explosion);
       bullets[i].x = -500;
     }
   }
