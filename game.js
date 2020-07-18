@@ -3317,7 +3317,8 @@ Tower.prototype.run = function(){
     }
   }
   if(firing){
-    
+      
+    playSound(sounds.Turret_Fire);
     if(this.fireType === "single"){
     bullets.push(new Bullet(this.bulletType,this.x,this.y,{
       damage:this.damage,
@@ -3489,6 +3490,7 @@ draw = function(){
     if(!bullets[i].dead){
     bullets[i].run();
     }if(bullets[i].type === "guidedMissile"&&bullets[i].dead&&bullets[i].x !== -500){
+        playSound(sounds.Big_Explosion);
       bullets.push(new Bullet("explosion",bullets[i].x,bullets[i].y,{
       damage:0,
       slowDown:0,
@@ -3497,7 +3499,7 @@ draw = function(){
         speed:0,
         targets:[false,false,false],
     }));
-        playSound(sounds.Big_Explosion);
+        
       bullets[i].x = -500;
     }
   }
