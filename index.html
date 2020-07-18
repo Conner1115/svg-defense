@@ -1,18 +1,103 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" type = "text/css" href="style.css"/>
-<link rel="icon" type="image/png" href="Dragon-Logo-2.png">
-<meta charset="utf-8"/>
-<title>SVG TOWER DEFENSE</title>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=">
+  <title></title>
 </head>
 <body>
-<h1>Testing Game Sounds</h1>
-<audio src = "sounds/Laser_Cannon-Mike_Koenig-797224747.mp3" controls></audio>
+  
+  <div id = "scripts-links">
+<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link rel="icon" type="image/png" href="Dragon-Logo-2.png">
+ <link rel = "stylesheet" href = "style.css">
+</div>
+
+<div id = "MAIN_BODY">
+
+<div id = "menu" class = "page">
+  <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/8th_AF_Bombing_Marienburg.JPEG/1920px-8th_AF_Bombing_Marienburg.JPEG" class = "background-image">
+  <h1 class = "title"><span class = "darkRed">Battle</span>cry Defense</h1>
+  <div id = "game-buttons">
+  <div class = "flex-wrapper">
+  <button class = "menu-button play-button">▶︎</button>
+  <button class = "menu-button enemy-button">⚔</button>
+    <button class = "menu-button how-button">?</button>
+    </div>
+  <div class = "flex-wrapper">
+  <button class = "menu-button settings-button">⚙</button>
+  <button class = "menu-button credits-button">©</button>
+  <button class = "menu-button story-button"><i class="fa fa-book"></i></button>
+  </div>
+  <div class = "flex-wrapper">
+  <button class = "menu-button lead-button"><i class="fa fa-trophy"></i></button>
+  <button class = "menu-button achievement-button">☑️</button>
+  <button class = "menu-button shop-button">$</button>
+  </div>
+  </div>
+  <button style = "position:fixed;left:0px;bottom:0px;width:50px;height:50px;font-size:30px;margin-left:0px;" class = "menu-button save-button"><i class="fa fa-save"></i></button>
+</div>
+<div id = "map-select" class = "page">
+<div class = "blur-background"><img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/World_War_1_-_Mobilized_forces_per_total_population_%28in_%25%29.png/1920px-World_War_1_-_Mobilized_forces_per_total_population_%28in_%25%29.png" class = "background-image gray"></div>
+  <h1 class = "title">Select A Map</h1>
+  <div id = "map-img"><h3 style = "text-align:center;margin-top:-22px;background:rgb(200,200,200);border:solid black 2px;" id = "map-name"></h3></div>
+  <div id = "difficulty"></div>
+  <button class = "menu-button Minus">-</button>
+  <button class = "menu-button Plus">+</button>
+  <button class = "menu-button LEFT">◀︎</button>
+  <button class = "menu-button PLAY" style = "font-size:60px;width:200px;">Play</button>
+  <button class = "menu-button RIGHT">►</button>
+  <button class = "menu-button back-button" style = "font-size:15px;width:50px;height:50px;position:fixed;bottom:0px;left:0px;margin-left:0px;">Back</button>
+</div>
+<div id = "enemies" class = "page">
+  <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Boeing-Whichata_B-29_Assembly_Line_-_1944.jpg/440px-Boeing-Whichata_B-29_Assembly_Line_-_1944.jpg" class = "background-image">
+  <h1 class = "title">Enemies</h1>
+  <div id = "enemy-img" style = "padding:5px;">
+    <h3 id = "enemy-name" style = "text-align:center" ></h3>
+    <h4 id = "enemy-d" style = "text-align:center" ></h4>
+    
+  </div>
+  <button class = "menu-button NEXT" >▶︎</button>
+  <button class = "menu-button BACK">◀︎</button>
+  <button class = "menu-button return-button" style = "font-size:15px;width:50px;height:50px;position:fixed;bottom:0px;left:0px;margin-left:0;">Menu</button>
+</div>
+<div id = "how" class = "page">
+  <img src = "https://upload.wikimedia.org/wikipedia/commons/e/ee/Bundesarchiv_DVM_10_Bild-23-61-23%2C_Linienschiff_%22SMS_Rheinland%22.jpg" class = "background-image">
+  <h1 class = "title">How to play</h1>
+  <p class = "how-p">Most of the rules will be explained throughout the game.  You will learn them in playing the tutorial.  If you have any questions about the game, be sure to ask me.  Also, have fun and enjoy my biggest project.  Be sure to reccomend it to others.<br><br><span  style = "color:red;text-align:center;font-size:30px;">Extra Notes on the game:</span><br><br>All of your progress will be saved via local/web storage.  You may reset your progress by going to the Settings section of the game.<br><br>If you find any bugs that I did not fix or mention, be sure to tell me about it.  I will try my best to give you the best experience in playing this.
+  </p>
+  <button class = "menu-button Return-button" style = "font-size:15px;width:50px;height:50px;position:fixed;bottom:0px;left:0px;margin-left:0;">Menu</button>
+  
+</div>
+  
+  
+  
+  
+<div id = "settings" class = "page"></div>
+<div id = "credits" class = "page"></div>
+<div id = "story" class = "page"></div>
+<div id = "lead" class = "page"></div>
+<div id = "achievements" class = "page"></div>
+<div id = "shop" class = "page"></div>
+
+<div id = "game" class = "page">
+  <canvas id = "canvas"></canvas>
+  
+</div>
+
+
+<div id = "expander">
+  <h1>Please expand your browser size</h1>
+</div>
+
+</div>
+
+  
 </body>
-  <!--SCRIPTS-->
+  <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
+  <script src="game.js" type="text/javascript"></script>
+  <script src="scenes.js" type="text/javascript"></script>
   <script src="DOMhelpers.js" type="text/javascript"></script>
-  <script src="artwork.js" type="text/javascript"></script>
-  <script src="audio.js" type="text/javascript"></script>
-  <script src="script.js" type="text/javascript"></script>
 </html>
