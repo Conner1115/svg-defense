@@ -1,4 +1,10 @@
-
+var playSound = function (sound) {
+  var AUDIO = document.createElement("audio");
+  AUDIO.src = sound;
+  AUDIO.autoplay = "true";
+  document.body.appendChild(AUDIO);
+};
+    
 var game_content = function(pjs) {
     with (pjs) {
     size(1200, 600);
@@ -8,6 +14,27 @@ var game_content = function(pjs) {
     frameRate(100);
     
     
+      var sounds = {
+  Turret_Fire:"https://raw.githubusercontent.com/Conner1115/svg-defense/master/sounds/40_smith_wesson_single-mike-koenig.mp3",
+  Heavy_Turret_Fire:"https://raw.githubusercontent.com/Conner1115/svg-defense/master/sounds/416_Barrett_sniper_rifle-Mike_Koenig-1498171968.mp3",
+  AAgun:"https://raw.githubusercontent.com/Conner1115/svg-defense/master/sounds/Anti Aircraft Gun-SoundBible.com-1303768514.mp3",
+  Rumble_Explosion:"https://raw.githubusercontent.com/Conner1115/svg-defense/master/sounds/Depth Charge Shorter-SoundBible.com-1978501900.mp3",
+  Big_Explosion:"https://raw.githubusercontent.com/Conner1115/svg-defense/master/sounds/Explosion_Ultra_Bass-Mark_DiAngelo-1810420658.mp3",
+  Grenade:"https://raw.githubusercontent.com/Conner1115/svg-defense/master/sounds/Grenade-SoundBible.com-2124844747.mp3",
+  HD_MGun:"https://raw.githubusercontent.com/Conner1115/svg-defense/master/sounds/High_Definition_Machine_gun-WEL-2006923900.mp3",
+  Laser_Cannon:"https://raw.githubusercontent.com/Conner1115/svg-defense/master/sounds/Laser_Cannon-Mike_Koenig-797224747.mp3",
+  Sniper_Fire:"https://raw.githubusercontent.com/Conner1115/svg-defense/master/sounds/Sniper_Rifle-Kibblesbob-2053709564.mp3",
+  Fire_Reload:"https://raw.githubusercontent.com/Conner1115/svg-defense/master/sounds/Winchester12-RA_The_Sun_God-1722751268.mp3",
+  Thud_Light_Fire:"https://raw.githubusercontent.com/Conner1115/svg-defense/master/sounds/barreta_m9-Dion_Stapper-1010051237.mp3",
+  Shotgun_Fire_Reload:"https://raw.githubusercontent.com/Conner1115/svg-defense/master/sounds/shotgun-mossberg590-RA_The_Sun_God-451502290.mp3",
+  Loud_Shot:"https://raw.githubusercontent.com/Conner1115/svg-defense/master/sounds/shotgun-spas_12-RA_The_Sun_God-503834910.mp3",
+  Loud_Sniper:"https://raw.githubusercontent.com/Conner1115/svg-defense/master/sounds/50_sniper_shot-Liam-2028603980.mp3",
+  Hit_Pierce:"https://raw.githubusercontent.com/Conner1115/svg-defense/master/sounds/Gun_loud-Soundmaster_-88363983.mp3",
+  Laser_RapidX5:"https://raw.githubusercontent.com/Conner1115/svg-defense/master/sounds/Laser_Machine_Gun-Mike_Koenig-1194129298.mp3",
+  Suicide_Bomber:"https://raw.githubusercontent.com/Conner1115/svg-defense/master/sounds/Suicide_Bomber_2-Mike_Koenig-1558726178.mp3",
+  Tank_Firing:"https://raw.githubusercontent.com/Conner1115/svg-defense/master/sounds/Tank Firing-SoundBible.com-998264747.mp3",
+};
+
     
     var TOWERS = [
   //basic turret class
@@ -3087,6 +3114,7 @@ var Tower = function(type,x,y){
   this.bulletType = "bullet";
   this.cost = 50;
   this.upgradeList = [TOWERS[0][1],TOWERS[0][2]];
+  this.fireSound = sounds.Tank_Firing;
   /*["Basic turret","Battlecry turret","PANTHER-3BG8","Elexiron turret","Dual Elexiron","CAMO destroyer"],
   //machinegun classes
   ["Machinegun turret","Tri-gattler","BL00DSHED gattler","BL00DSHED X3 gattler","HEX gattler","Vulcan Hex Destroyer","Hex BL00DSHED Destroyer"],
@@ -3148,6 +3176,7 @@ var Tower = function(type,x,y){
   //gattler classes
   switch(type){
     case TOWERS[1][0]:
+      this.fireSound = sounds.Turret_Fire;
       this.damage = 2;
       this.rate = 10;
       this.cost = 100;
@@ -3156,6 +3185,7 @@ var Tower = function(type,x,y){
       this.bulletType = "bulletSmall";
     break;
     case TOWERS[1][1]:
+      this.fireSound = sounds.Turret_Fire;
       this.damage = 2;
       this.rate = 10;
       this.cost = 400;
@@ -3165,6 +3195,7 @@ var Tower = function(type,x,y){
       this.fireType = "triple";
     break;
     case TOWERS[1][2]:
+      this.fireSound = sounds.Turret_Fire;
       this.damage = 2;
       this.rate = 5;
       this.cost = 250;
@@ -3173,6 +3204,7 @@ var Tower = function(type,x,y){
       this.bulletType = "bulletSmall";
     break;
      case TOWERS[1][3]:
+      this.fireSound = sounds.Turret_Fire;
       this.damage = 2;
       this.rate = 5;
       this.cost = 600;
@@ -3182,6 +3214,7 @@ var Tower = function(type,x,y){
       this.fireType = "triple";
     break;
      case TOWERS[1][4]:
+      this.fireSound = sounds.Turret_Fire;
       this.damage = 2;
       this.rate = 5;
       this.cost = 850;
@@ -3200,6 +3233,7 @@ var Tower = function(type,x,y){
       this.fireType = "hex";
     break;
     case TOWERS[1][6]:
+      this.fireSound = sounds.Turret_Fire;
       this.damage = 2;
       this.rate = 2.5;
       this.cost = 1500;
@@ -3211,7 +3245,8 @@ var Tower = function(type,x,y){
   }
   //AA gun classes
   switch(type){
-      case TOWERS[2][0]:
+    case TOWERS[2][0]:
+      this.fireSound = sounds.AAgun; 
       this.targets = [false,false,true];
       this.damage = 20;
       this.rate = 50;
@@ -3221,6 +3256,7 @@ var Tower = function(type,x,y){
       this.bulletType = "bulletBig";
     break;
       case TOWERS[2][1]:
+      this.fireSound = sounds.AAgun; 
       this.targets = [false,false,true];
       this.damage = 50;
       this.rate = 150;
@@ -3230,6 +3266,7 @@ var Tower = function(type,x,y){
       this.bulletType = "bulletBig";
     break;
     case TOWERS[2][2]:
+      this.fireSound = sounds.AAgun; 
       this.targets = [false,false,true];
       this.damage = 5;
       this.rate = 10;
@@ -3239,6 +3276,7 @@ var Tower = function(type,x,y){
       this.bulletType = "bulletElexiron";
     break;
     case TOWERS[2][3]:
+      this.fireSound = sounds.AAgun; 
       this.targets = [false,false,true];
       this.damage = 40;
       this.rate = 150;
@@ -3249,6 +3287,7 @@ var Tower = function(type,x,y){
       this.fireType = "dual";
     break;
     case TOWERS[2][4]:
+      this.fireSound = sounds.AAgun; 
       this.targets = [false,false,true];
       this.damage = 50;
       this.rate = 10;
@@ -3258,6 +3297,7 @@ var Tower = function(type,x,y){
       this.bulletType = "laserGreen";
     break;
     case TOWERS[2][5]:
+      this.fireSound = sounds.AAgun; 
       this.targets = [false,false,true];
       this.damage = 100;
       this.rate = 200;
@@ -3265,6 +3305,17 @@ var Tower = function(type,x,y){
       this.speed = 15;
       this.range = 1200;
       this.bulletType = "guidedMissile";
+    break;
+    case TOWERS[2][6]:
+      this.fireSound = sounds.Loud_Shot; 
+      this.targets = [false,false,true];
+      this.damage = 20;
+      this.rate = 75;
+      this.cost = 1000;
+      this.speed = 15;
+      this.range = 500;
+      this.bulletType = "bulletBig";
+      this.fireType = "triple";
     break;
   }
 };
@@ -3317,8 +3368,7 @@ Tower.prototype.run = function(){
     }
   }
   if(firing){
-      
-    playSound(sounds.Turret_Fire);
+    playSound(this.fireSound);
     if(this.fireType === "single"){
     bullets.push(new Bullet(this.bulletType,this.x,this.y,{
       damage:this.damage,
@@ -3436,7 +3486,7 @@ draw = function(){
   try{
   if(frameCount % 100 === 0){
     enemies.push(new Enemy(ENEMIES[3][1],random(1200),random(600)));
-    playSound(sounds.Grenade);
+    
   }
         background(240,240,240);
   noFill();
@@ -3490,7 +3540,7 @@ draw = function(){
     if(!bullets[i].dead){
     bullets[i].run();
     }if(bullets[i].type === "guidedMissile"&&bullets[i].dead&&bullets[i].x !== -500){
-        playSound(sounds.Big_Explosion);
+      playSound(sounds.Grenade);
       bullets.push(new Bullet("explosion",bullets[i].x,bullets[i].y,{
       damage:0,
       slowDown:0,
@@ -3499,7 +3549,6 @@ draw = function(){
         speed:0,
         targets:[false,false,false],
     }));
-        
       bullets[i].x = -500;
     }
   }
